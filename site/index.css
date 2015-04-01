@@ -1,0 +1,71 @@
+.text-center {
+	text-align: center;
+}
+
+
+body{
+	font-family: 'Ubuntu', sans-serif;
+	background: none;
+}
+
+.full {
+  background: url('background1.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.transparent {
+	background-color: rgba(191, 191, 191, .7);
+}
+
+.full-transparent {
+	background-color: rgba(191, 191, 191, 0);
+}
+
+.color-white {
+	color: white;
+}
+
+
+p {
+	text-indent: 30px;
+	
+}
+
+.header{
+
+	background: url('background1.jpg') no-repeat center center fixed;
+	height: 600px;
+}
+
+
+.hr-normal {
+	display: block;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+}
+
+.footer {
+	width:100%;
+	height:80px;
+	position:absolute;
+	bottom:0;
+	left:0;
+	background:#ee5;
+}
+
+.vertical-center {
+	position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.header-text {
+	font-size: 70px;
+}
