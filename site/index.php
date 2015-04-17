@@ -19,7 +19,7 @@
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#">Home</a></li>
+              <li class="active"><a href="index.php">Home</a></li>
 			  
               <li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">City Bill Pay <span class="caret"></span></a>
@@ -34,14 +34,11 @@
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Information <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
                   <li><a href="http://gm.k12.mn.us/" target="_blank"">Grand Meadow School</a></li>
-				  <li><a href="#" target="_blank">Library</a></li>
+				  <li><a href="http://grandmeadow.lib.mn.us/" target="_blank">Library</a></li>
 				  <li class="divider"></li>
-				  <li class="dropdown-header">Parks and Rec</li>
-                  <li><a href="#">City Park</a></li>
-                  <li><a href="#">Veteran's Memorial Park</a></li>
-				  <li><a href="#">Pine Lawn</a></li>
+                  <li><a href="parks.php">Parks and Rec</a></li>
 				  <li class="divider"></li>
-				  <li><a href="directory.php">Directory</a></li>
+				  <li><a href="directory.php?page=restaurants">Directory</a></li>
 				  <li><a href="#">Other Local Services</a></li>
                 </ul>
 			  </li>
@@ -49,15 +46,23 @@
 			<li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Departments <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
-                  <li><a href="#">Fire Department</a></li>
-                  <li><a href="#">Ambulence</a></li>
-                  <li><a href="#">Police Department</a></li>
-				  <li><a href="#">EDA</a></li>
+                  <li><a href="department.php?page=fire">Fire Department</a></li>
+                  <li><a href="department.php?page=ambulance">Ambulence</a></li>
+                  <li><a href="department.php?page=police">Police Department</a></li>
+				  <li><a href="department.php?page=eda">EDA</a></li>
+                </ul>
+              </li>
+			  
+			  <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">City Council <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="http://cityofgrandmeadow.weebly.com/index.html" target="_blank">Minutes</a></li>
+                  <li><a href="http://cityofgrandmeadow.weebly.com/consent-agenda.html" target="_blank">Agenda</a></li>
                 </ul>
               </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="#">Contact</a></li>
+              <li><a href="contact.php">Contact</a></li>
               <li><a href="login.php">Login</a></li>
             </ul>
           </div><!--/.nav-collapse -->
