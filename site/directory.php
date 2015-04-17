@@ -72,34 +72,41 @@
 	  </div>
 	  </div>
 	  
-	  <br>
 	  
-	  <div class="container">
+	  <div id="directory-header" class="container-fluid">
 	  <h1 class="header-text text-center">Directory</h1>
-	  <br>
 	  
-	  <div class="text-center" class="btn-group" role="group" aria-label="...">
-		<a href="?page=restaurants"<button type="button" class="btn btn-default">Restaurants</button></a>
-		<a href="?page=auto"<button type="button" class="btn btn-default">Auto</button></a>
-		<a href="?page=ag"<button type="button" class="btn btn-default">Ag Business</button></a>
-		<a href="?page=finance"<button type="button" class="btn btn-default">Finance & Law</button></a>
-		<a href="?page=service"<button type="button" class="btn btn-default">Service</button></a>
-		<a href="?page=churches"<button type="button" class="btn btn-default">Churches</button></a>
-		<a href="?page=recreation"<button type="button" class="btn btn-default">Recreation</button></a>
-		<a href="?page=realestate"<button type="button" class="btn btn-default">Real Estate</button></a>
-		<a href="?page=insurance"<button type="button" class="btn btn-default">Insurance</button></a>
-	</div>
-	<?php if (isset($_GET["page"]))
-		{
-			$page = $_GET["page"];
-			
-			include "directory/{$page}.php";
-		}
+	  
+		  <div class="text-center" class="btn-group" role="group" aria-label="...">
+			<a href="?page=restaurants"<button type="button" class="btn btn-default">Restaurants</button></a>
+			<a href="?page=auto"<button type="button" class="btn btn-default">Auto</button></a>
+			<a href="?page=ag"<button type="button" class="btn btn-default">Ag Business</button></a>
+			<a href="?page=finance"<button type="button" class="btn btn-default">Finance & Law</button></a>
+			<a href="?page=service"<button type="button" class="btn btn-default">Service</button></a>
+			<a href="?page=churches"<button type="button" class="btn btn-default">Churches</button></a>
+			<a href="?page=recreation"<button type="button" class="btn btn-default">Recreation</button></a>
+			<a href="?page=realestate"<button type="button" class="btn btn-default">Real Estate</button></a>
+			<a href="?page=insurance"<button type="button" class="btn btn-default">Insurance</button></a>
+		</div>
+	</div><!-- /.container -->
+	<br>
+	
+	
+	<?php
+		
+		
+			if (isset($_GET["page"]))
+			{
+				$page = $_GET["page"];
+				
+				include "directory/{$page}.php";
+			}
+		
 		
 	 ?>
 		
 		
-    </div><!-- /.container -->
+    
 
 	 <!-- FOOTER -->
     <div class="navbar navbar-default navbar-fixed-bottom">
