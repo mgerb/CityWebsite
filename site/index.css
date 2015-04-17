@@ -6,15 +6,10 @@
 body{
 	font-family: 'Ubuntu', sans-serif;
 	background: none;
+	padding-bottom: 30px;
+	padding-top: 40px;
 }
 
-.full {
-  background: url('background1.jpg') no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
 
 .transparent {
 	background-color: rgba(191, 191, 191, .7);
@@ -37,7 +32,8 @@ p {
 .header{
 
 	background: url('background1.jpg') no-repeat center center fixed;
-	height: 600px;
+	height: 500px;
+	background-size:	cover;
 }
 
 
@@ -68,4 +64,45 @@ p {
 
 .header-text {
 	font-size: 70px;
+}
+
+.img-center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }

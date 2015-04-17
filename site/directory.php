@@ -41,7 +41,7 @@
                   <li><a href="#">Veteran's Memorial Park</a></li>
 				  <li><a href="#">Pine Lawn</a></li>
 				  <li class="divider"></li>
-				  <li><a href="directory.php">Directory</a></li>
+				  <li><a href="#">Directory</a></li>
 				  <li><a href="#">Other Local Services</a></li>
                 </ul>
 			  </li>
@@ -72,69 +72,32 @@
 	  </div>
 	  </div>
 	  
+	  <br>
 	  
 	  <div class="container">
+	  <h1 class="header-text text-center">Directory</h1>
+	  <br>
 	  
-		<div class="jumbotron full-transparent">
-		
-		
-				
-				<h1 class="text-center"><span>Welcome to Grand Meadow!</span></h1>
-					
-				<p>
-					We are excited about using this site to communicate with our residents, businesses and visitors. Grand Meadow is located on Highway 16, between Rochester and Austin, in Mower County.
-				</p>
-				<br>
-				<p>
-					A bright sunny morning in the 1850's, as the story goes, a gentleman's gaze encompassed the beautiful and peaceful prairie grass landscape and proclaimed, "What a Grand Meadow"! Thus, our town's name was conceived. Grand Meadow was established in 1862, four years after the statehood of Minnesota. Even though the prairie grass landscape is now covered with brick and mortar, the "Grand Meadow" still offers a beautiful and peaceful existence to our residents.
-				</p>
-				
-				<p>
-					Grand Meadow is now a modern and progressive community. We offer a "State of the Art" school, Mayo Health Satellite, Four churches, Assisted Living/Nursing Home facility, active ambulance and fire department, three parks, city library, new housing as well as establiched homes for sale. We pride ourselves in providing a safe and tranquil life for families who want to leave the big city behind. We are proud of our community and welcome you to be part of our "little piece of heaven" in our "Grand Meadow".
-				</p>
+	  <div class="text-center" class="btn-group" role="group" aria-label="...">
+		<a href="?page=restaurants"<button type="button" class="btn btn-default">Restaurants</button></a>
+		<a href="?page=auto"<button type="button" class="btn btn-default">Auto</button></a>
+		<a href="?page=ag"<button type="button" class="btn btn-default">Ag Business</button></a>
+		<a href="?page=finance"<button type="button" class="btn btn-default">Finance & Law</button></a>
+		<a href="?page=service"<button type="button" class="btn btn-default">Service</button></a>
+		<a href="?page=churches"<button type="button" class="btn btn-default">Churches</button></a>
+		<a href="?page=recreation"<button type="button" class="btn btn-default">Recreation</button></a>
+		<a href="?page=realestate"<button type="button" class="btn btn-default">Real Estate</button></a>
+		<a href="?page=insurance"<button type="button" class="btn btn-default">Insurance</button></a>
+	</div>
+	<?php if (isset($_GET["page"]))
+		{
+			$page = $_GET["page"];
 			
-		</div>
-	  
-	  
-	  
-	  
-	  
-	 <hr class="hr-normal">
-	  
-	  
-	  
+			include "directory/{$page}.php";
+		}
 		
+	 ?>
 		
-		
-		<div class="row">
-			<h1 class="text-center">City of Grand Meadow Residents</h1>
-			<div class="col-lg-6 ">
-				<p>The City of Grand Meadow is asking it’s water customers to monitor the temperature of their water and to continue to monitor the temperature through March. 
-				The reason for this is that the frost level in the ground is at a depth not seen in the last 20 to 30 years. To test, run your cold water line from a faucet for 
-				5 minutes then check the temperature of the water. If the water temperature gets below 40 degrees Fahrenheit, you should start running a pencil-width stream of water 
-				from the faucet. After you start running the water please contact City Hall so that the city can monitor the issue city wide.
-				</p>
-				
-			</div>
-			
-			<div class="col-lg-6 ">
-				<p>The Grand Meadow City Council and the water/sewer department would like to remind you DO NOT put rags and or clothing in the sewer system. 
-				This has been an ongoing issue in the city and as of the last 2 months has been extremely costly to the city. The pump in the Pheasant Run area 
-				has needed work done 3 times in the last 2 months, and if this persists the cost could be accessed to the residents. This reminder is for all Grand Meadow residents regardless of location.
-				</p>
-				
-			</div>
-			
-			
-			
-			<div class="col-md-12">
-			<h4 class="text-center">Thank-you, City of Grand Meadow</h4>
-		
-			</div>
-		
-		</div>
-		
-		<hr class="hr-normal">
 		
     </div><!-- /.container -->
 
