@@ -103,12 +103,16 @@
 		</div>
 	  
 	  
+	  <div id="calTest">	  
 	  
+	  <iframe src="https://www.google.com/calendar/embed?src=n5aqev2bcan4cauun30cgmvh30%40group.calendar.google.com" ></iframe>
 	  
+	 </div>
 	  
 	 <hr class="hr-normal">
 	  
 	  
+	
 	  
 		
 		
