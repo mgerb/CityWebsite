@@ -5,6 +5,17 @@
 
   <body>
 
+  
+  <?php
+	session_start();
+	if(isset($_SESSION['username'])) {//anything inside of if statement = authenticated user
+		echo 'Welcome, '.$_SESSION['username']; //do whateve you want with username from here
+		
+		//logout set up in logout.php call from wherever. if user = authenticated switch upper right to logout insead of log in?
+	}
+  
+  ?>
+  
 	  	<div class="header">
 	
       <!-- Fixed navbar -->

@@ -1,0 +1,14 @@
+
+
+
+<?php 
+	session_start();
+	
+	//prompt user in fancy bootstrap "are you sure you want to log out?"
+	if($response = "yesButton")
+	{
+		session_destroy();//removes session from server which means no longer signed in anywhere Any session was used for individual user
+		
+	}
+
+?>

@@ -1,16 +1,33 @@
 <?php include 'partials/header.php';?>
 
 <body>
-
+<?php
+		
+		if(isset($_POST['email']) && (isset($_POST['password'])))
+		{
+		/*
+		PDO connection
+		prepareSTMNT = SELECT * WHERE DB_Username = $username AND DB_Password = $password FROM user_TABLE
+		result = prepareSTMNT execute
+		if result != null
+		if(isset($_POST['name']) && isset($_POST['password']))
+		{
+			session_start();
+			$_SESSION['username'] = $username;
+		}
+		*/
+	?>
+		
+		}
 	  
     <div class="container">
 
       <form class="form-signin">
         <h2 class="form-signin-heading">Please sign in</h2>
         <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
       </form>
 
