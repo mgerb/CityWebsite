@@ -13,7 +13,7 @@
 		  <p class="lead">Phone: (507) 754-5190</p>
         </div>
         <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" src="directory/churches/c1.jpg" alt="Generic placeholder image">
+          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" src="directory/churches/r1.jpg" alt="Generic placeholder image">
         </div>
       </div>
 
@@ -28,7 +28,7 @@
 		  <p class="lead">Phone: (507) 754-5914</p>
         </div>
         <div class="col-md-5 col-md-pull-7">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" src="directory/churches/c2.jpg" alt="Generic placeholder image">
+          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" src="directory/churches/r2.jpg" alt="Generic placeholder image">
         </div>
       </div>
 
@@ -43,7 +43,7 @@
 		  <p class="lead">Phone: (507) 754-5203</p>
         </div>
         <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" src="directory/churches/c3.jpg" alt="Generic placeholder image">
+          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" src="directory/churches/r3.jpg" alt="Generic placeholder image">
         </div>
       </div>
 	  
@@ -58,7 +58,7 @@
 		  <p class="lead">Phone: (507) 754-5783</p>
         </div>
         <div class="col-md-5 col-md-pull-7">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" src="directory/churches/c4.jpg" alt="Generic placeholder image">
+          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" src="directory/churches/r4.jpg" alt="Generic placeholder image">
         </div>
       </div>
 
@@ -73,7 +73,7 @@
 		  <p class="lead">Phone: (507) 754-5809</p>
         </div>
         <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" src="directory/churches/c5.jpg" alt="Generic placeholder image">
+          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" src="directory/churches/r5.jpg" alt="Generic placeholder image">
         </div>
       </div>
 
