@@ -11,7 +11,7 @@
 		  <p class="lead">(507) 754-4555</p>
         </div>
         <div class="col-md-5">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" src="directory/ag/r1.jpg" alt="Generic placeholder image">
+          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" src="directory/finance/r1.jpg" alt="Generic placeholder image">
         </div>
       </div>
 
@@ -23,7 +23,7 @@
 		  <p class="lead">(507) 754-5123</p>
         </div>
         <div class="col-md-5 col-md-pull-7">
-          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" src="directory/ag/r2.jpg" alt="Generic placeholder image">
+          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" src="directory/finance/r2.jpg" alt="Generic placeholder image">
         </div>
       </div>
 
