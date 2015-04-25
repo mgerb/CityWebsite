@@ -116,11 +116,11 @@
 		</div>
 	  
 	  
-	  <div id="calTest" >	  
+	  <div class="responsive-iframe-container" >	  
 	  
 	  <iframe src="https://www.google.com/calendar/embed?src=n5aqev2bcan4cauun30cgmvh30%40group.calendar.google.com" ></iframe>
 	  
-	 </div>
+	  </div>
 	  
 	 <hr class="hr-normal">
 	  
@@ -160,6 +160,8 @@
 		
 		<hr class="hr-normal">
 		
+		
+
     </div><!-- /.container -->
 
 	 <!-- FOOTER -->
