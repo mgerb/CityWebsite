@@ -1,3 +1,6 @@
+	
+	 <script type="text/javascript"src="https://maps.googleapis.com/maps/api/js?"></script>
+	 <script type="text/javascript" src="map.js"></script>
 	<?php 
 	session_start();
 	require ('vendor/autoload.php');
@@ -90,7 +93,6 @@
               </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="contact.php">Contact</a></li>
               <li><a href="<?=$loginLink?>"><?=$loginTitle?></a></li>
             </ul>
           </div><!--/.nav-collapse -->
@@ -231,8 +233,11 @@
 	
 	<div class="header2">
 	
-		<div class="container">
-			<!-- Put map here -->
+		<div class="container" id="mapDiv">
+			<h5 class="text-center"> Grand Meadow <h5>
+			<div id ="map"> <div>
+			
+   
 		</div>
 	
 	<div>
