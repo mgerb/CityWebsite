@@ -2,7 +2,9 @@
 	text-align: center;
 }
 
-
+.p-big {
+	font-size: 20px;
+}
 body{
 	font-family: 'Ubuntu', sans-serif;
 	background: none;
@@ -10,6 +12,15 @@ body{
 	padding-top: 40px;
 }
 
+.bigger-picture {
+	width: 100%;
+	height: 100%;
+}
+
+.smaller-picture {
+	width: 80%;
+	height: 80%;
+}
 
 .transparent {
 	background-color: rgba(191, 191, 191, .7);
@@ -23,7 +34,11 @@ body{
 	color: white;
 }
 
-
+.table-center {
+	margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
 p {
 	text-indent: 30px;
 	
@@ -33,6 +48,12 @@ p {
 
 	background: url('background1.jpg') no-repeat center center fixed;
 	height: 500px;
+	background-size:	cover;
+}
+
+.header2{
+
+	background: url('background1.jpg') no-repeat center center fixed;
 	background-size:	cover;
 }
 
@@ -96,7 +117,7 @@ p {
 .form-signin .form-control:focus {
   z-index: 2;
 }
-.form-signin input[type="email"] {
+.form-signin input[type="text"] {
   margin-bottom: -1px;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
@@ -107,13 +128,52 @@ p {
   border-top-right-radius: 0;
 }
 
+.form-announce {
+  max-width: 500px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-announce .form-announce-heading,
+.form-announce .checkbox {
+  margin-bottom: 10px;
+}
+.form-announce .checkbox {
+  font-weight: normal;
+}
+.form-announce .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-announce .form-control:focus {
+  z-index: 2;
+}
+.form-announce input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-announce input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.text-area-size {
+	width: 500px;
+	height: 300px;
+}
 #directory-header {
 	height: 200px;
 	background-color: tan;
 }
 
-.color-tan {
-	background-color: #E3E3E3;
+.color-red {
+	color: red;
 }
 
 .responsive-iframe-container {

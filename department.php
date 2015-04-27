@@ -46,7 +46,7 @@
                 </ul>
 			  </li>
 			  
-              <li class="dropdown active">
+              <li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Information <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
                   <li><a href="http://gm.k12.mn.us/" target="_blank"">Grand Meadow School</a></li>
@@ -54,12 +54,12 @@
 				  <li class="divider"></li>
                   <li><a href="parks.php">Parks and Rec</a></li>
 				  <li class="divider"></li>
-				  <li class="active"><a href="directory.php?page=restaurants">Directory</a></li>
+				  <li><a href="directory.php?page=restaurants">Directory</a></li>
 				  <li><a href="directory.php?page=other">Other Local Services</a></li>
                 </ul>
 			  </li>
             
-			<li class="dropdown">
+			<li class="dropdown active">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Departments <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
                   <li><a href="department.php?page=fire">Fire Department</a></li>
@@ -93,25 +93,6 @@
 	  </div>
 	  </div>
 	  
-	  
-	  <div class="container">
-	  <h1  class="text-center">Directory</h1>
-	  
-	  
-		  <div class="text-center" class="btn-group" role="group" aria-label="...">
-			<a href="?page=restaurants"<button type="button" class="btn btn-default">Restaurants</button></a>
-			<a href="?page=auto"<button type="button" class="btn btn-default">Auto</button></a>
-			<a href="?page=ag"<button type="button" class="btn btn-default">Ag Business</button></a>
-			<a href="?page=finance"<button type="button" class="btn btn-default">Finance & Law</button></a>
-			<a href="?page=service"<button type="button" class="btn btn-default">Service</button></a>
-			<a href="?page=churches"<button type="button" class="btn btn-default">Churches</button></a>
-			<a href="?page=recreation"<button type="button" class="btn btn-default">Recreation</button></a>
-			<a href="?page=realestate"<button type="button" class="btn btn-default">Real Estate</button></a>
-			<a href="?page=insurance"<button type="button" class="btn btn-default">Insurance</button></a>
-			<a href="?page=other"<button type="button" class="btn btn-default">Other</button></a>
-		</div>
-	
-	
 	
 	
 	<?php
@@ -121,14 +102,14 @@
 			{
 				$page = $_GET["page"];
 				
-				if (file_exists("directory/{$page}.php")){
-				include "directory/{$page}.php";
+				if (file_exists("departments/{$page}.php")){
+				include "departments/{$page}.php";
 				}
 			}
 		
 		
 	 ?>
-	</div>	
+		
 		
     
 

@@ -2,6 +2,7 @@
 	session_start();
 	require ('vendor/autoload.php');
 	include 'partials/header.php';
+	$confirmMessage = "";
 	
 	if(isset($_SESSION['username'])) {//anything inside of if statement = authenticated user
 		$session = true;
@@ -16,12 +17,38 @@
 		$loginTitle = "Login";
 	}
 	
-	?>
-  <body>
-
-	  	<div class="header">
 	
-      <!-- Fixed navbar -->
+	
+	if(isset($_POST['submit']) && isset($_SESSION['username']))
+	{
+		include 'database/pdo_connect.php';
+		
+		$title = trim($_POST['title']);
+		$announcement = trim($_POST['announcement']);
+		$date = date('Y-m-d H:i:s');
+		
+		try{
+		$query = $conn->prepare("INSERT INTO announcements(title, announcement, date) VALUES(:title, :announcement, :date)");
+		
+		$query->bindParam(':title', $title);
+		$query->bindParam(':announcement', $announcement);
+		$query->bindParam(':date', $date);
+		$query->execute();
+		
+		$confirmMessage = "Information successfully entered";
+		}
+		
+		catch(PDOException $e)
+		{
+			echo $e->getMessage();
+		}
+	}
+	$conn = null;
+	?>
+
+<body>
+
+<!-- Fixed navbar -->
       <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
           <div class="navbar-header">
@@ -46,7 +73,7 @@
                 </ul>
 			  </li>
 			  
-              <li class="dropdown active">
+              <li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Information <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
                   <li><a href="http://gm.k12.mn.us/" target="_blank"">Grand Meadow School</a></li>
@@ -54,7 +81,7 @@
 				  <li class="divider"></li>
                   <li><a href="parks.php">Parks and Rec</a></li>
 				  <li class="divider"></li>
-				  <li class="active"><a href="directory.php?page=restaurants">Directory</a></li>
+				  <li><a href="directory.php?page=restaurants">Directory</a></li>
 				  <li><a href="directory.php?page=other">Other Local Services</a></li>
                 </ul>
 			  </li>
@@ -84,61 +111,37 @@
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
+	  <br>
+	  <br>
 	  
-	  <div class="container">
-				<h1 class="header-text text-center color-white">City of Grand Meadow</h1>
-				<hr>
-				<br>
-				<img class="img-center" src="logo.png" alt="logo">
-	  </div>
-	  </div>
-	  
-	  
-	  <div class="container">
-	  <h1  class="text-center">Directory</h1>
-	  
-	  
-		  <div class="text-center" class="btn-group" role="group" aria-label="...">
-			<a href="?page=restaurants"<button type="button" class="btn btn-default">Restaurants</button></a>
-			<a href="?page=auto"<button type="button" class="btn btn-default">Auto</button></a>
-			<a href="?page=ag"<button type="button" class="btn btn-default">Ag Business</button></a>
-			<a href="?page=finance"<button type="button" class="btn btn-default">Finance & Law</button></a>
-			<a href="?page=service"<button type="button" class="btn btn-default">Service</button></a>
-			<a href="?page=churches"<button type="button" class="btn btn-default">Churches</button></a>
-			<a href="?page=recreation"<button type="button" class="btn btn-default">Recreation</button></a>
-			<a href="?page=realestate"<button type="button" class="btn btn-default">Real Estate</button></a>
-			<a href="?page=insurance"<button type="button" class="btn btn-default">Insurance</button></a>
-			<a href="?page=other"<button type="button" class="btn btn-default">Other</button></a>
-		</div>
-	
-	
-	
-	
-	<?php
-		
-		
-			if (isset($_GET["page"]))
-			{
-				$page = $_GET["page"];
-				
-				if (file_exists("directory/{$page}.php")){
-				include "directory/{$page}.php";
-				}
-			}
-		
-		
-	 ?>
-	</div>	
-		
-    
+    <div class="container">
 
-	 <!-- FOOTER -->
+      <form class="form-announce" action="aForm.php" method="post">
+        <h2 class="form-announce-heading text-center">Enter City Announcement</h2>
+		
+        <label for="inputTitle" class="sr-only">Title</label>
+        <input name="title" type="text" id="inputTitle" class="form-control" placeholder="Title" required autofocus>
+		<br>
+        <label for="inputAnnouncement" class="sr-only">Announcement</label>
+        <textarea class="text-area-size" name="announcement" id="inputAnnouncement" placeholder="Please enter city announcement..." required></textarea>
+		
+        <button class="btn btn-lg btn-primary btn-block" name="submit" type="submit">Enter Announcement</button>
+		
+      </form>
+	  
+	  <div class="text-center">
+		<span><?=$confirmMessage?></span>
+	  </div>
+	  
+    </div> <!-- /container -->
+
+
+     <!-- FOOTER -->
     <div class="navbar navbar-default navbar-fixed-bottom">
 			<p class="text-center">Grand Meadow City Hall - 112 Grand Avenue East - <br>
 									PO Box 38, Grand Meadow, MN 55936 - Telephone # 507-754-5280 - Email - cityofgm@hmtel.com</p>
 		
 	</div>
-	
-</body>
-
-<?php include 'partials/footer.php';?>
+  </body>
+  
+  <?php include 'partials/footer.php';?>

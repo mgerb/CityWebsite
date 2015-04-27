@@ -46,15 +46,15 @@
                 </ul>
 			  </li>
 			  
-              <li class="dropdown active">
+              <li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Information <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
                   <li><a href="http://gm.k12.mn.us/" target="_blank"">Grand Meadow School</a></li>
 				  <li><a href="http://grandmeadow.lib.mn.us/" target="_blank">Library</a></li>
 				  <li class="divider"></li>
-                  <li><a href="parks.php">Parks and Rec</a></li>
+                  <li class="active"><a href="parks.php">Parks and Rec</a></li>
 				  <li class="divider"></li>
-				  <li class="active"><a href="directory.php?page=restaurants">Directory</a></li>
+				  <li><a href="directory.php?page=restaurants">Directory</a></li>
 				  <li><a href="directory.php?page=other">Other Local Services</a></li>
                 </ul>
 			  </li>
@@ -92,45 +92,52 @@
 				<img class="img-center" src="logo.png" alt="logo">
 	  </div>
 	  </div>
+	  <br>
 	  
-	  
-	  <div class="container">
-	  <h1  class="text-center">Directory</h1>
-	  
-	  
-		  <div class="text-center" class="btn-group" role="group" aria-label="...">
-			<a href="?page=restaurants"<button type="button" class="btn btn-default">Restaurants</button></a>
-			<a href="?page=auto"<button type="button" class="btn btn-default">Auto</button></a>
-			<a href="?page=ag"<button type="button" class="btn btn-default">Ag Business</button></a>
-			<a href="?page=finance"<button type="button" class="btn btn-default">Finance & Law</button></a>
-			<a href="?page=service"<button type="button" class="btn btn-default">Service</button></a>
-			<a href="?page=churches"<button type="button" class="btn btn-default">Churches</button></a>
-			<a href="?page=recreation"<button type="button" class="btn btn-default">Recreation</button></a>
-			<a href="?page=realestate"<button type="button" class="btn btn-default">Real Estate</button></a>
-			<a href="?page=insurance"<button type="button" class="btn btn-default">Insurance</button></a>
-			<a href="?page=other"<button type="button" class="btn btn-default">Other</button></a>
-		</div>
-	
-	
-	
-	
-	<?php
+	<div class="container">
+		<h1 class="text-center header-text">Parks and Recreation<h1>
 		
+		<hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">City Park</h2>
+          <p class="lead">The City Park is the place to be! There is a basketball court and two sand volleyball courts. During Meadowfest the volleyball courts will be used for the sand volleyball tournament. The park is also child friendly with swings and a slide. City Park also has a pavilion if you would like to have a picnic.</p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" src="parks/citypark.jpg" alt="Generic placeholder image">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7 col-md-push-5">
+          <h2 class="featurette-heading">Veteran's Memorial Park</h2>
+          <p class="lead">The Old School Park is a great place to spend time on a nice summer day. The reason that it is called the old school
+park is that it is the playground of the old Grand Meadow school that used to stand to the east of the playground. 
+The Old School park is a great place for kids with some new playground equiptment.</p>
+        </div>
+        <div class="col-md-5 col-md-pull-7">
+          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" src="parks/memorialpark1.jpg" alt="Generic placeholder image">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Pine Lawn</span></h2>
+          <p class="lead">Pine Lawn Park, situated on Hwy 16 east of Grand Meadow, has two locations. One on the east side and the west side of the creek that runs through the park. 
+		  There is camping on both sides, at a cost of $10/night for campers and $5/night for tents. There is electricity but no water hook ups. On the east side there is a nice pavilion for picnics and restrooms. 
+		  On the west side there is a very nice playground equipment and restrooms. Many people like to fish and there is a few that will put in small boats</p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" src="parks/pinelawn.jpg" alt="Generic placeholder image">
+        </div>
+      </div>
 		
-			if (isset($_GET["page"]))
-			{
-				$page = $_GET["page"];
-				
-				if (file_exists("directory/{$page}.php")){
-				include "directory/{$page}.php";
-				}
-			}
-		
-		
-	 ?>
-	</div>	
-		
-    
+    </div>
 
 	 <!-- FOOTER -->
     <div class="navbar navbar-default navbar-fixed-bottom">

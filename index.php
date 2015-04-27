@@ -1,20 +1,39 @@
-
 	<?php 
+	session_start();
 	require ('vendor/autoload.php');
-	include 'partials/header.php';?>
+	include 'partials/header.php';
+	
+	if(isset($_SESSION['username'])) {//anything inside of if statement = authenticated user
+		$session = true;
+		$loginLink = "logout.php";
+		$loginTitle = "Logout";
+	}
+	
+	else
+	{
+		$session = false;
+		$loginLink = "login.php";
+		$loginTitle = "Login";
+	}
+	
+	include 'database/pdo_connect.php';
+	
+	$query = "SELECT row_id, title, announcement, date FROM announcements";
+	$resultset = $conn->query($query);
+	$resultset->setFetchMode(PDO::FETCH_ASSOC);
+	$conn= null;
+	
+	$json_string = file_get_contents("http://api.wunderground.com/api/9f736e3015c376c4/forecast/q/MN/Grand_Meadow.json");
+	$parsed_json = json_decode($json_string);
+	
+	/*
+	$location = $parsed_json->{'location'}->{'city'};	
+	$temp_f = $parsed_json->{'current_observation'}->{'temp_f'};
+	*/
+	
+	?>
 
   <body>
-
-  
-  <?php
-	session_start();
-	if(isset($_SESSION['username'])) {//anything inside of if statement = authenticated user
-		echo 'Welcome, '.$_SESSION['username']; //do whateve you want with username from here
-		
-		//logout set up in logout.php call from wherever. if user = authenticated switch upper right to logout insead of log in?
-	}
-  
-  ?>
   
 	  	<div class="header">
 	
@@ -52,7 +71,7 @@
                   <li><a href="parks.php">Parks and Rec</a></li>
 				  <li class="divider"></li>
 				  <li><a href="directory.php?page=restaurants">Directory</a></li>
-				  <li><a href="#">Other Local Services</a></li>
+				  <li><a href="directory.php?page=other">Other Local Services</a></li>
                 </ul>
 			  </li>
             
@@ -60,7 +79,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Departments <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
                   <li><a href="department.php?page=fire">Fire Department</a></li>
-                  <li><a href="department.php?page=ambulance">Ambulence</a></li>
+                  <li><a href="department.php?page=ambulance">EMS</a></li>
                   <li><a href="department.php?page=police">Police Department</a></li>
 				  <li><a href="department.php?page=eda">EDA</a></li>
                 </ul>
@@ -76,7 +95,7 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <li><a href="contact.php">Contact</a></li>
-              <li><a href="login.php">Login</a></li>
+              <li><a href="<?=$loginLink?>"><?=$loginTitle?></a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
@@ -116,40 +135,41 @@
 		</div>
 	  
 	  
-	  <div class="responsive-iframe-container" >	  
 	  
-	  <iframe src="https://www.google.com/calendar/embed?src=n5aqev2bcan4cauun30cgmvh30%40group.calendar.google.com" ></iframe>
-	  
-	  </div>
 	  
 	 <hr class="hr-normal">
-	  
-	  
-	
-	  
 		
 		
 		
 		<div class="row">
 			<h1 class="text-center">City of Grand Meadow Residents</h1>
-			<div class="col-lg-6 ">
-				<p>The City of Grand Meadow is asking it’s water customers to monitor the temperature of their water and to continue to monitor the temperature through March. 
-				The reason for this is that the frost level in the ground is at a depth not seen in the last 20 to 30 years. To test, run your cold water line from a faucet for 
-				5 minutes then check the temperature of the water. If the water temperature gets below 40 degrees Fahrenheit, you should start running a pencil-width stream of water 
-				from the faucet. After you start running the water please contact City Hall so that the city can monitor the issue city wide.
-				</p>
+			
+			<?php if (isset($_SESSION['username'])){ ?>
+			
+				<a href="aForm.php"><h2 class="color-red text-center">Enter Announcement</h2></a>
+			
+			<?php } ?>
+			
+			
+			
+			
+			<?php while ($r = $resultset->fetch()): ?>
+			<div class="col-lg-6">
+				<div class="text-center"><h3><?=htmlspecialchars($r['title'])?></h3></div>
+				<p><?=htmlspecialchars($r['announcement'])?></p>
+				
+				<?php if (isset($_SESSION['username'])){ ?>
+				<div class="text-center">
+				<form action="database/deleteAnnouncement.php" method="post">
+					<input name="row_id" type="hidden" value="<?=htmlspecialchars($r['row_id'])?>">
+					
+					<button name="submit" type="submit">Delete</button>
+				</form>
+				</div>
+				<?php } ?>
 				
 			</div>
-			
-			<div class="col-lg-6 ">
-				<p>The Grand Meadow City Council and the water/sewer department would like to remind you DO NOT put rags and or clothing in the sewer system. 
-				This has been an ongoing issue in the city and as of the last 2 months has been extremely costly to the city. The pump in the Pheasant Run area 
-				has needed work done 3 times in the last 2 months, and if this persists the cost could be accessed to the residents. This reminder is for all Grand Meadow residents regardless of location.
-				</p>
-				
-			</div>
-			
-			
+			<?php endwhile; ?>
 			
 			<div class="col-md-12">
 			<h4 class="text-center">Thank-you, City of Grand Meadow</h4>
@@ -158,11 +178,51 @@
 		
 		</div>
 		
-		<hr class="hr-normal">
+		<br>
+		
+		</div><!-- /.container -->
+		
+		<div class="header2">
+		
+			<div class="container">
+				<br>
+				<div class="responsive-iframe-container" >	  
+			  
+						<iframe src="https://www.google.com/calendar/embed?src=n5aqev2bcan4cauun30cgmvh30%40group.calendar.google.com" ></iframe>
+			  
+				</div>
+				<br>
+			</div>
+		</div>
+		
+		<div class="container">
+
+
+			<div class="row">
+				
+				<div class="col-lg-3">
+					<?php ?>
+				</div>
+				
+				<div class="col-lg-3">
+					Weather Forecast
+				</div>
+				
+				<div class="col-lg-3">
+					Weather Forecast
+				</div>
+				
+				<div class="col-lg-3">
+					Weather Forecast
+				</div>
+			
+			</div>
+		
+		</div>
 		
 		
 
-    </div><!-- /.container -->
+    
 
 	 <!-- FOOTER -->
     <div class="navbar navbar-default navbar-fixed-bottom">
