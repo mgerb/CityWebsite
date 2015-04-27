@@ -101,7 +101,7 @@
 				<h1 class="header-text text-center color-white">City of Grand Meadow</h1>
 				<hr>
 				<br>
-				<img class="img-center" src="logo.png" alt="logo">'
+				<img class="img-center" src="logo.png" alt="logo">
 				
 	  </div>
 	  </div>
