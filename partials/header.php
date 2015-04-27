@@ -9,7 +9,7 @@
     <meta name="author" content="">
 
     <title>City of Grand Meadow</title>
-
+	<link rel="shortcut icon" href="favicon.ico"></link>
     <!-- Bootstrap core CSS -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 

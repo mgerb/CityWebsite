@@ -1,6 +1,3 @@
-	
-	 <script type="text/javascript"src="https://maps.googleapis.com/maps/api/js?"></script>
-	 <script type="text/javascript" src="map.js"></script>
 	<?php 
 	session_start();
 	require ('vendor/autoload.php');
@@ -132,12 +129,14 @@
 			
 		
 	  
-	  
+	 
 	  
 	  
 	 <div class="row text-center">
 	 
 				<h1>Weather Forecast</h1>
+				
+				 <hr class="hr-normal">
 				
 				<?php foreach($parsed_json as $key => $value) { ?>
 					
@@ -180,13 +179,13 @@
 		<div class="header2">
 		
 			<div class="container">
-				<br>
+				
 				<div class="responsive-iframe-container" >	  
 			  
 						<iframe src="https://www.google.com/calendar/embed?src=n5aqev2bcan4cauun30cgmvh30%40group.calendar.google.com" ></iframe>
 			  
 				</div>
-				<br>
+				
 			</div>
 		</div>
 	
@@ -231,7 +230,7 @@
 
     </div>
 	
-	<div class="header2 map-padding">
+	<div class="header2">
 	
 		<div class="container" id="mapDiv">
 			<h5 class="text-center"> Grand Meadow <h5>

@@ -52,7 +52,8 @@ p {
 }
 
 .header2{
-
+	padding-top: 20px;
+	padding-bottom: 20px;
 	background: url('background1.jpg') no-repeat center center fixed;
 	background-size:	cover;
 }
@@ -180,10 +181,6 @@ p {
 	color: blue;
 }
 
-.map-padding {
-	padding-top: 20px;
-	padding-bottom: 20px;
-}
 .responsive-iframe-container {
 position: relative;
 padding-bottom: 56.25%;
