@@ -231,16 +231,17 @@
 
     </div>
 	
-	<div class="header2">
+	<div class="header2 map-padding">
 	
 		<div class="container" id="mapDiv">
 			<h5 class="text-center"> Grand Meadow <h5>
-			<div id ="map"> <div>
+			
+			<div id ="map"> </div>
 			
    
 		</div>
 	
-	<div>
+	</div>
 
 	 <!-- FOOTER -->
     <div class="navbar navbar-default navbar-fixed-bottom">
