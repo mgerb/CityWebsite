@@ -105,7 +105,6 @@
               </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="contact.php">Contact</a></li>
               <li><a href="<?=$loginLink?>"><?=$loginTitle?></a></li>
             </ul>
           </div><!--/.nav-collapse -->
