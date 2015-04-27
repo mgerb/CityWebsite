@@ -24,12 +24,8 @@
 	$conn= null;
 	
 	$json_string = file_get_contents("http://api.wunderground.com/api/9f736e3015c376c4/forecast/q/MN/Grand_Meadow.json");
-	$parsed_json = json_decode($json_string);
-	
-	/*
-	$location = $parsed_json->{'location'}->{'city'};	
-	$temp_f = $parsed_json->{'current_observation'}->{'temp_f'};
-	*/
+	$parsed_json = json_decode($json_string, true);
+	$parsed_json = $parsed_json['forecast']['simpleforecast']['forecastday'];
 	
 	?>
 
@@ -114,32 +110,85 @@
 	  
 	  <div class="container">
 	  
-		<div class="jumbotron full-transparent">
+		
 		
 		
 				
-				<h1 class="text-center"><span>Welcome to Grand Meadow!</span></h1>
+				<h1 class="text-center header-text">Welcome to Grand Meadow!</h1>
 					
-				<p>
-					We are excited about using this site to communicate with our residents, businesses and visitors. Grand Meadow is located on Highway 16, between Rochester and Austin, in Mower County.
+				<p class="p-big">
+					We are excited about using this site to communicate with our residents, businesses, and visitors. Grand Meadow is located on Highway 16, between Rochester and Austin, in Mower County.
 				</p>
 				<br>
-				<p>
+				<p class="p-big">
 					A bright sunny morning in the 1850's, as the story goes, a gentleman's gaze encompassed the beautiful and peaceful prairie grass landscape and proclaimed, "What a Grand Meadow"! Thus, our town's name was conceived. Grand Meadow was established in 1862, four years after the statehood of Minnesota. Even though the prairie grass landscape is now covered with brick and mortar, the "Grand Meadow" still offers a beautiful and peaceful existence to our residents.
 				</p>
 				
-				<p>
+				<p class="p-big">
 					Grand Meadow is now a modern and progressive community. We offer a "State of the Art" school, Mayo Health Satellite, Four churches, Assisted Living/Nursing Home facility, active ambulance and fire department, three parks, city library, new housing as well as establiched homes for sale. We pride ourselves in providing a safe and tranquil life for families who want to leave the big city behind. We are proud of our community and welcome you to be part of our "little piece of heaven" in our "Grand Meadow".
 				</p>
 			
+		
+	  
+	  
+	  
+	  
+	 <div class="row text-center">
+	 
+				<h1>Weather Forecast</h1>
+				
+				<?php foreach($parsed_json as $key => $value) { ?>
+					
+					<div class="col-md-3">
+					
+						<img src="<?=$value['icon_url']?>" alt="logo">
+						
+						<br>
+						
+						<?=$value['date']['weekday']?>
+						
+						<br>
+						
+						<?=$value['date']['month']?> / <?=$value['date']['day']?>
+						
+						<br>
+						
+						<?=$value['pop'];?>% Precipitation
+						
+						<br>
+						
+						<span class="color-red">High <?=$value['high']['fahrenheit']?>F
+						<br>
+						
+						<span class="color-blue">Low <?=$value['high']['fahrenheit']?>F
+					
+					</div>
+					
+					
+				<?php } ?>
+			
+	</div>
+		
+		
+		
+		<br>
+		
+		</div><!-- /.container -->
+		
+		<div class="header2">
+		
+			<div class="container">
+				<br>
+				<div class="responsive-iframe-container" >	  
+			  
+						<iframe src="https://www.google.com/calendar/embed?src=n5aqev2bcan4cauun30cgmvh30%40group.calendar.google.com" ></iframe>
+			  
+				</div>
+				<br>
+			</div>
 		</div>
-	  
-	  
-	  
-	  
-	 <hr class="hr-normal">
-		
-		
+	
+	<div class="container">
 		
 		<div class="row">
 			<h1 class="text-center">City of Grand Meadow Residents</h1>
@@ -177,52 +226,8 @@
 			</div>
 		
 		</div>
-		
-		<br>
-		
-		</div><!-- /.container -->
-		
-		<div class="header2">
-		
-			<div class="container">
-				<br>
-				<div class="responsive-iframe-container" >	  
-			  
-						<iframe src="https://www.google.com/calendar/embed?src=n5aqev2bcan4cauun30cgmvh30%40group.calendar.google.com" ></iframe>
-			  
-				</div>
-				<br>
-			</div>
-		</div>
-		
-		<div class="container">
 
-
-			<div class="row">
-				
-				<div class="col-lg-3">
-					<?php ?>
-				</div>
-				
-				<div class="col-lg-3">
-					Weather Forecast
-				</div>
-				
-				<div class="col-lg-3">
-					Weather Forecast
-				</div>
-				
-				<div class="col-lg-3">
-					Weather Forecast
-				</div>
-			
-			</div>
-		
-		</div>
-		
-		
-
-    
+    </div>
 
 	 <!-- FOOTER -->
     <div class="navbar navbar-default navbar-fixed-bottom">

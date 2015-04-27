@@ -176,6 +176,10 @@ p {
 	color: red;
 }
 
+.color-blue {
+	color: blue;
+}
+
 .responsive-iframe-container {
 position: relative;
 padding-bottom: 56.25%;
