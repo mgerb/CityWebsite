@@ -161,7 +161,7 @@
 						<span class="color-red">High <?=$value['high']['fahrenheit']?>F
 						<br>
 						
-						<span class="color-blue">Low <?=$value['high']['fahrenheit']?>F
+						<span class="color-blue">Low <?=$value['low']['fahrenheit']?>F
 					
 					</div>
 					
