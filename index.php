@@ -228,6 +228,14 @@
 		</div>
 
     </div>
+	
+	<div class="header2">
+	
+		<div class="container">
+			<!-- Put map here -->
+		</div>
+	
+	<div>
 
 	 <!-- FOOTER -->
     <div class="navbar navbar-default navbar-fixed-bottom">
