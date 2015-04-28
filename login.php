@@ -114,10 +114,16 @@ include 'database/pdo_connect.php';
         <input name="password" type="password" id="password" class="form-control" placeholder="Password" required>
 		
         <button id="submit" class="btn btn-lg btn-primary btn-block" name="submit" type="submit">Sign in</button>
-		<span id="error"></span>
 	 </form>
-	  
-	
+	 <div class="text-center">
+	<?php 
+			if (isset($errMsg))
+			{
+				echo $errMsg;
+			}
+		?>
+		
+	</div>
     </div> <!-- /container -->
 
 

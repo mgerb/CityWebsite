@@ -137,37 +137,71 @@
 				<h1>Weather Forecast</h1>
 				
 				 <hr class="hr-normal">
-				
-				<?php foreach($parsed_json as $key => $value) { ?>
-					
+				 
 					<div class="col-md-3">
 					
-						<img src="<?=$value['icon_url']?>" alt="logo">
-						
+						<img id="img1" src="" alt="logo">
 						<br>
-						
-						<?=$value['date']['weekday']?>
-						
+						<span id="weekday1"></span>
 						<br>
-						
-						<?=$value['date']['month']?> / <?=$value['date']['day']?>
-						
+						<span id="date1"></span>
 						<br>
-						
-						<?=$value['pop'];?>% Precipitation
-						
+						<span id="precip1"></span>
 						<br>
-						
-						<span class="color-red">High <?=$value['high']['fahrenheit']?>F
+						<span id="high1" class="color-red"></span>
 						<br>
-						
-						<span class="color-blue">Low <?=$value['low']['fahrenheit']?>F
+						<span id="low1" class="color-blue"></span>
 					
 					</div>
 					
+					<div class="col-md-3">
 					
-				<?php } ?>
-			
+						<img id="img2" src="" alt="logo">
+						<br>
+						<span id="weekday2"></span>
+						<br>
+						<span id="date2"></span>
+						<br>
+						<span id="precip2"></span>
+						<br>
+						<span id="high2" class="color-red"></span>
+						<br>
+						<span id="low2" class="color-blue"></span>
+					
+					</div>
+					
+					<div class="col-md-3">
+					
+						<img id="img3" src="" alt="logo">
+						<br>
+						<span id="weekday3"></span>
+						<br>
+						<span id="date3"></span>
+						<br>
+						<span id="precip3"></span>
+						<br>
+						<span id="high3" class="color-red"></span>
+						<br>
+						<span id="low3" class="color-blue"></span>
+					
+					</div>
+					
+					<div class="col-md-3">
+					
+						<img id="img4" src="" alt="logo">
+						<br>
+						<span id="weekday4"></span>
+						<br>
+						<span id="date4"></span>
+						<br>
+						<span id="precip4"></span>
+						<br>
+						<span id="high4" class="color-red"></span>
+						<br>
+						<span id="low4" class="color-blue"></span>
+					
+					</div>
+					
 	</div>
 		
 		

@@ -7,6 +7,7 @@
     <script src="bootstrap/assets//ie10-viewport-bug-workaround.js"></script>
 	<script type="text/javascript"src="https://maps.googleapis.com/maps/api/js?"></script>
 	<script src="index.js"></script>
+	<script src="weather.js"></script>
 	
 	
 </html>
