@@ -107,21 +107,16 @@ include 'database/pdo_connect.php';
 
       <form class="form-signin" action="login.php" method="post">
         <h2 class="form-signin-heading">Please sign in</h2>
-        <label for="inputUser" class="sr-only">Username</label>
-        <input name="username" type="text" id="inputUser" class="form-control" placeholder="username" required autofocus>
+        <label for="username" class="sr-only">Username</label>
+        <input name="username" type="text" id="username" class="form-control" placeholder="username" required autofocus>
 		
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <label for="password" class="sr-only">Password</label>
+        <input name="password" type="password" id="password" class="form-control" placeholder="Password" required>
 		
-        <button class="btn btn-lg btn-primary btn-block" name="submit" type="submit">Sign in</button>
-      </form>
+        <button id="submit" class="btn btn-lg btn-primary btn-block" name="submit" type="submit">Sign in</button>
+		<span id="error"></span>
+	 </form>
 	  
-		<?php 
-			if (isset($errMsg))
-			{
-				echo $errMsg;
-			}
-		?>
 	
     </div> <!-- /container -->
 
