@@ -48,11 +48,10 @@ include 'database/pdo_connect.php';
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.php">GM</a>
+			<a class="navbar-brand" href="index.php"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>GM</a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li><a href="index.php">Home</a></li>
 			  
               <li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">City Bill Pay <span class="caret"></span></a>
@@ -79,6 +78,7 @@ include 'database/pdo_connect.php';
 			<li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Departments <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
+				<li><a href="department.php?page=city">City Council</a></li>
                   <li><a href="department.php?page=fire">Fire Department</a></li>
                   <li><a href="department.php?page=ambulance">EMS</a></li>
                   <li><a href="department.php?page=police">Police Department</a></li>
@@ -89,13 +89,14 @@ include 'database/pdo_connect.php';
 			  <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">City Council <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
+				
                   <li><a href="http://cityofgrandmeadow.weebly.com/index.html" target="_blank">Minutes</a></li>
                   <li><a href="http://cityofgrandmeadow.weebly.com/consent-agenda.html" target="_blank">Agenda</a></li>
                 </ul>
               </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li class="active"><a href="login.php">Login</a></li>
+              <li class="active"><a href="login.php">Login&nbsp<span class="glyphicon glyphicon-log-in" aria-hidden="true"></a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->

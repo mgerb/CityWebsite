@@ -1,6 +1,6 @@
 jQuery(document).ready(function($) {
   $.ajax({
-  url : "http://api.wunderground.com/api/9f736e3015c376c4/forecast/q/MN/Grand_Meadow.json",
+  url : "https://api.wunderground.com/api/9f736e3015c376c4/forecast/q/MN/Grand_Meadow.json",
   dataType : "jsonp",
   success : function(parsed_json) {
   var forecast = parsed_json['forecast']['simpleforecast']['forecastday'];

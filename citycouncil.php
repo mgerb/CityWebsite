@@ -2,7 +2,6 @@
 	session_start();
 	require ('vendor/autoload.php');
 	include 'partials/header.php';
-	$confirmMessage = "";
 	
 	if(isset($_SESSION['username'])) {//anything inside of if statement = authenticated user
 		$session = true;
@@ -17,38 +16,12 @@
 		$loginTitle = "Login";
 	}
 	
-	
-	
-	if(isset($_POST['submit']) && isset($_SESSION['username']))
-	{
-		include 'database/pdo_connect.php';
-		
-		$title = trim($_POST['title']);
-		$announcement = trim($_POST['announcement']);
-		$date = date('Y-m-d H:i:s');
-		
-		try{
-		$query = $conn->prepare("INSERT INTO announcements(title, announcement, date) VALUES(:title, :announcement, :date)");
-		
-		$query->bindParam(':title', $title);
-		$query->bindParam(':announcement', $announcement);
-		$query->bindParam(':date', $date);
-		$query->execute();
-		
-		$confirmMessage = "Information successfully entered";
-		}
-		
-		catch(PDOException $e)
-		{
-			echo $e->getMessage();
-		}
-	}
-	$conn = null;
 	?>
+  <body>
 
-<body>
-
-<!-- Fixed navbar -->
+	  	<div class="header">
+	
+      <!-- Fixed navbar -->
       <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
           <div class="navbar-header">
@@ -58,10 +31,10 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
+			<a class="navbar-brand" href="index.php"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>GM</a>
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li><a href="index.php"><span class="glyphicon glyphicon-home" aria-hidden="true">&nbsp</span>Home</a></li>
 			  
               <li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">City Bill Pay <span class="caret"></span></a>
@@ -85,7 +58,7 @@
                 </ul>
 			  </li>
             
-			<li class="dropdown">
+			<li class="dropdown active">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Departments <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
                   <li><a href="department.php?page=fire">Fire Department</a></li>
@@ -109,37 +82,42 @@
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
-	  <br>
-	  <br>
 	  
-    <div class="container">
-
-      <form class="form-announce" action="aForm.php" method="post">
-        <h2 class="form-announce-heading text-center">Enter City Announcement</h2>
-		
-        <label for="inputTitle" class="sr-only">Title</label>
-        <input name="title" type="text" id="inputTitle" class="form-control" placeholder="Title" required autofocus>
-		<br>
-        <label for="inputAnnouncement" class="sr-only">Announcement</label>
-        <textarea class="text-area-size" name="announcement" id="inputAnnouncement" placeholder="Please enter city announcement..." required></textarea>
-		
-        <button class="btn btn-lg btn-primary btn-block" name="submit" type="submit">Enter Announcement</button>
-		
-      </form>
-	  
-	  <div class="text-center">
-		<span><?=$confirmMessage?></span>
+	  <div class="container">
+				<h1 class="header-text text-center color-white">City of Grand Meadow</h1>
+				<hr>
+				<br>
+				<img class="img-center" src="logo.png" alt="logo">
+	  </div>
 	  </div>
 	  
-    </div> <!-- /container -->
+	
+	
+	<?php
+		
+		
+			if (isset($_GET["page"]))
+			{
+				$page = $_GET["page"];
+				
+				if (file_exists("departments/{$page}.php")){
+				include "departments/{$page}.php";
+				}
+			}
+		
+		
+	 ?>
+		
+		
+    
 
-
-     <!-- FOOTER -->
+	 <!-- FOOTER -->
     <div class="navbar navbar-default navbar-fixed-bottom">
 			<p class="text-center">Grand Meadow City Hall - 112 Grand Avenue East - <br>
 									PO Box 38, Grand Meadow, MN 55936 - Telephone # 507-754-5280 - Email - cityofgm@hmtel.com</p>
 		
 	</div>
-  </body>
-  
-  <?php include 'partials/footer.php';?>
+	
+</body>
+
+<?php include 'partials/footer.php';?>
