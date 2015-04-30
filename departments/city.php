@@ -42,9 +42,7 @@
 
 		<img class="smaller-picture" src="departments/city/2.jpg" alt="EMS"> <br>
 		
-		<strong>Name:</strong>Mike Keefe <br>
-		<strong>Position:</strong>EMT<br>
-		<strong>Serving Since:</strong> 2008<br>
+		<strong>Council Member</strong> - Sandy Fenton <br>
 
 		</div>
 		
@@ -52,9 +50,7 @@
 
 		<img class="smaller-picture" src="departments/city/3.jpg" alt="EMS"> <br>
 		
-		<strong>Name:</strong> Daniel Arndorfer<br>
-		<strong>Position:</strong> Admin Secretary<br>
-		<strong>Serving Since:</strong> 2008<br>
+		<strong>Council Member</strong> - Tony Warmka<br>
 
 		</div>
 		
@@ -62,9 +58,7 @@
 
 		<img class="smaller-picture" src="departments/city/4.jpg" alt="EMS"> <br>
 		
-		<strong>Name:</strong> Mike Dolton <br>
-		<strong>Position:</strong> EMT <br>
-		<strong>Serving Since:</strong> 1997<br>
+		<strong>Council Member</strong> - Travis Warmka <br>
 
 		</div>
 		
@@ -72,9 +66,7 @@
 
 		<img class="smaller-picture" src="departments/city/5.jpg" alt="EMS"> <br>
 		
-		<strong>Name:</strong> Ethan Hanken<br>
-		<strong>Position:</strong> EMT<br>
-		<strong>Serving Since:</strong>2008 <br>
+		<strong>Council Member</strong> - Tony Paul<br>
 
 		</div>
 		
@@ -82,9 +74,7 @@
 
 		<img class="smaller-picture" src="departments/city/6.jpg" alt="EMS"> <br>
 		
-		<strong>Name:</strong> Mike Jacobson<br>
-		<strong>Position:</strong> EMT<br>
-		<strong>Serving Since:</strong>1992 <br>
+		<strong>Clerk-Treasurer</strong> - Sandy Elliott<br>
 
 		</div>
 		
