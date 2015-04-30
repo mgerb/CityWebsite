@@ -25,8 +25,6 @@
 
 
 <div class="container">
-	<h1 class="text-center header-text"> Roster </h1>
-	<br>
 
 	<div class="row">
 
